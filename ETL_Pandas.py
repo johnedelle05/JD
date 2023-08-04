@@ -19,7 +19,6 @@ df_items = pd.read_sql_query(query_items, conn)
 # Close connection
 conn.close()
 
-# Join DF
 merged_df = df_customer.merge(df_sales, on='customer_id') \
     .merge(df_orders, on='sales_id') \
     .merge(df_items, on='item_id')
